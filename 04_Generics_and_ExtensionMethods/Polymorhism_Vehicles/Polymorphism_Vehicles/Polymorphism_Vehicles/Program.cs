@@ -15,6 +15,7 @@ namespace Polymorphism_Vehicles
             boat.DisplayInfo();
             plane.DisplayInfo();
 
+            Console.WriteLine("\nPrinted from extension methods:");
             Car.Drive();
             MotorBike.Wheelie();
             Boat.Sail();
