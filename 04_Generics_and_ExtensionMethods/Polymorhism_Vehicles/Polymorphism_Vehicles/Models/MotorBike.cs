@@ -15,10 +15,5 @@
         {
             Console.WriteLine($"I'm a {VehicleType} and i drive on {NumberOfWheels} wheels :)");
         }
-
-        public static void Wheelie()
-        {
-            Console.WriteLine("Driving on one wheel");
-        }
     }
 }

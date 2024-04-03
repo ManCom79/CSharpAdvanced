@@ -11,11 +11,6 @@
             NumberOfWheels = numberOfWheels;
         }
 
-        public static void Drive()
-        {
-            Console.WriteLine("Driving");
-        }
-
         public override void DisplayInfo()
         {
             Console.WriteLine($"I'm a {VehicleType} and i drive on {NumberOfWheels} wheels :)");

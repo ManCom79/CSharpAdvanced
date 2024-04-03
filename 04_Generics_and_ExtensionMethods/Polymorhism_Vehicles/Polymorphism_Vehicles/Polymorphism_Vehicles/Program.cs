@@ -5,10 +5,10 @@ namespace Polymorphism_Vehicles
     {
         static void Main(string[] args)
         {
-            Vehicle car = new Car("car", 4);
-            Vehicle motorBike = new MotorBike("motorbike", 2);
-            Vehicle boat = new Boat();
-            Vehicle plane = new Plane("Jumbo Jet");
+            Car car = new Car("car", 4);
+            MotorBike motorBike = new MotorBike("motorbike", 2);
+            Boat boat = new Boat();
+            Plane plane = new Plane("Jumbo Jet");
 
             car.DisplayInfo();
             motorBike.DisplayInfo();
@@ -16,10 +16,10 @@ namespace Polymorphism_Vehicles
             plane.DisplayInfo();
 
             Console.WriteLine("\nPrinted from extension methods:");
-            Car.Drive();
-            MotorBike.Wheelie();
-            Boat.Sail();
-            Plane.Fly();
+            Console.WriteLine(car.Drive());
+            Console.WriteLine(motorBike.Wheelie());
+            Console.WriteLine(boat.Saling());
+            Console.WriteLine(plane.Fly());
         }
     }
 }

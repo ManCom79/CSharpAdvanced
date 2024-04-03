@@ -14,10 +14,5 @@ namespace Models
         {
             Console.WriteLine($"I'm a {VehicleType} and I have multiple couples of wheels :)");
         }
-
-        public static void Fly()
-        {
-            Console.WriteLine("Flying");
-        }
     }
 }
