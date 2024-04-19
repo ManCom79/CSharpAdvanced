@@ -1,4 +1,6 @@
-﻿namespace ReadWrite_to_File_System
+﻿using System.IO;
+
+namespace ReadWrite_to_File_System
 {
     internal class Program
     {
@@ -29,7 +31,7 @@
             List<string> names = new List<string>();
             int count = 0;
 
-            while (count < 3)
+            while (count < 5)
             {
                 Console.WriteLine("Please enter a name");
                 string name = Console.ReadLine();
@@ -45,6 +47,36 @@
                 }
                 Console.WriteLine($"All names are written at {folderPath}.");
             }
+
+            for (char i = 'a'; i <= 'z'; i++)
+            {
+                using (var streamRead = new StreamReader(filePath))
+                {                
+                    while (!streamRead.EndOfStream)
+                    {
+                        string name = streamRead.ReadLine();
+                        string lowerCase = name.ToLower();
+                        if (lowerCase[0] == i)
+                        {
+                            if (File.Exists($@"{folderPath}\namesStartingWith_{i}.txt"))
+                            {
+                                using(var streamWrite = new StreamWriter($@"{folderPath}\namesStartingWith_{i}.txt", true))
+                                {
+                                    streamWrite.WriteLine(name);
+                                }
+                            } else
+                            {
+                                File.Create($@"{folderPath}\namesStartingWith_{i}.txt").Close();
+                                using (var streamWrite = new StreamWriter($@"{folderPath}\namesStartingWith_{i}.txt", true))
+                                {
+                                    streamWrite.WriteLine(name);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
         }
     }
 }
